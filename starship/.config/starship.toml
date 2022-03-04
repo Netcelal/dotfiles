@@ -1,0 +1,40 @@
+# Timeout for commands executed by starship
+command_timeout = 1500
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Make prompt a single line instead of two lines
+[line_break]
+disabled = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+# success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+success_symbol = " [λ](grey)"
+error_symbol = " [λ](bold red)"
+
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]
+threshold = 70
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 5
+format = "[took](bright-black) [$duration]($style) "
+show_milliseconds=true
+style = "italic white"
+
+[directory]
+truncation_length = 2
+truncate_to_repo = false
+disabled = false
+style = "bold yellow"
+read_only = " [RO]"
+read_only_style = "italic red"
+
