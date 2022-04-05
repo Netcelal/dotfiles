@@ -28,6 +28,9 @@ require("packer").startup(
     -- Package manager
     use "wbthomason/packer.nvim"
 
+    -- Better nvim startup performance
+    use "lewis6991/impatient.nvim"
+
     -- Set background to transparent
     use "tribela/vim-transparent"
 
@@ -46,14 +49,12 @@ require("packer").startup(
     -- use "ayu-theme/ayu-vim"
     -- use "marko-cerovac/material.nvim"
     -- use "dracula/vim" -- Theme Dracula
-
-    -- Visual Git Plugin for Neovim to enhance your git experience
-    use {
-      "tanvirtin/vgit.nvim",
-      requires = {
-        "nvim-lua/plenary.nvim"
-      }
-    }
+    -- use(
+    --   {
+    --     "catppuccin/nvim",
+    --     as = "catppuccin"
+    --   }
+    -- )
 
     -- Git integration for Neovim
     use {
@@ -81,14 +82,11 @@ require("packer").startup(
     -- UI to select things (files, grep results, open buffers...)
     use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
 
-    use {"ahmedkhalf/project.nvim"}
-
-    -- Terminal
-    use {"akinsho/toggleterm.nvim"}
-
     -- Fancy start screen for Vim
-    use "mhinz/vim-startify"
-
+    use {
+      "startup-nvim/startup.nvim",
+      requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}
+    }
     -- Which Key
     use {
       "folke/which-key.nvim"
@@ -97,15 +95,12 @@ require("packer").startup(
     -- Formatter: Syntax formatter for programming languages
     use "mhartington/formatter.nvim"
 
-    -- Fancier statusline
+    -- Fancier statusline and tabline
     use {
-      "nvim-lualine/lualine.nvim",
+      "tamton-aquib/staline.nvim",
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
     use {"nvim-lua/lsp-status.nvim"}
-
-    -- Fancier buffer lines too
-    use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
 
     use {"phaazon/hop.nvim"} -- Jump to anywhere
 
@@ -136,13 +131,6 @@ require("packer").startup(
     use "neovim/nvim-lspconfig"
     use({"onsails/lspkind-nvim", requires = {"famiu/bufdelete.nvim"}})
 
-    -- File explorer for Neovim
-    use {
-      "kyazdani42/nvim-tree.lua",
-      requires = {
-        "kyazdani42/nvim-web-devicons" -- optional, for file icon
-      }
-    }
     -- Icons
     use {
       "yamatsum/nvim-nonicons",

@@ -36,13 +36,6 @@ vim.cmd [[
 -- map("n", "gR", "<cmd>Trouble lsp_references<cr>", {silent = true, noremap = true})
 -- }}}
 
--- Project plugin config {{{
-
-vim.g.nvim_tree_respect_buf_cwd = 1
-
-require("telescope").load_extension("projects")
-require("project_nvim").setup {}
-
--- Mappings for Project plugin
-map("n", "<C-p>", ":Telescope projects<CR>", opts)
+-- Impatient config {{{
+require("impatient").enable_profile()
 -- }}}

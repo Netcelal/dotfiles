@@ -53,10 +53,10 @@ require("telescope").setup {
 --Add leader shortcuts
 map("n", "\\\\", [[<cmd>lua require('telescope.builtin').builtin()<CR>]], opts)
 map("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
-map("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<CR>]], opts)
+map("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').git_files()<CR>]], opts)
 map("n", "<leader>sb", [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], opts)
 map("n", "<leader>sh", [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], opts)
 map("n", "<leader>st", [[<cmd>lua require('telescope.builtin').tags()<CR>]], opts)
 map("n", "<leader>sd", [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], opts)
 map("n", "<leader>fw", [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], opts)
-map("n", "<leader>fl", [[<cmd>lua require('telescope.builtin').file_browser()<CR>]], opts)
+map("n", "<leader>fl", [[<cmd>lua require('telescope.builtin').find_files()<CR>]], opts)

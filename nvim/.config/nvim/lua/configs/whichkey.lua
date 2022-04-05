@@ -21,10 +21,8 @@ wk.register(
       t = "Tags",
       d = "Grep String"
     },
-    ["<leader>st"] = "Startify",
-    ["<C-n>"] = "Nvim Tree",
-    ["<C-p>"] = "List Projects",
-    ["C-t"] = "Open Terminal",
+    ["<leader>st"] = "Evil Startup",
+    ["<C-n>"] = "Netrw File Explorer",
     ["C-g"] = "Open NeoGit",
     ["C-gl"] = "Open LazyGit",
     ["bg"] = "Go to Buffer",

@@ -182,6 +182,12 @@ require("lspconfig").tsserver.setup(
   }
 )
 
+-- Deno
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+require "lspconfig".denols.setup {}
+
 -- HTML
 require("lspconfig").html.setup(
   {

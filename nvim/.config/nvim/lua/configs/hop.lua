@@ -1,17 +1,13 @@
--- Create local variable to shorten keymapping commands
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
-
 -- Hop config
 local hop = require "hop"
 hop.setup()
 
 -- Hop Keymappings
-map("n", "<leader><leader>/", ":HopPattern<CR>", {silent = true})
-map("n", "<leader><leader>j", ":HopLine<CR>", {silent = true})
-map("n", "<leader><leader>k", ":HopLine<CR>", {silent = true})
-map("n", "<leader><leader>l", ":HopLine<CR>", {silent = true})
-map("n", "<leader><leader>w", ":HopWord<CR>", {silent = true})
+vim.api.nvim_set_keymap("n", "<leader><leader>/", ":HopPattern<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader><leader>j", ":HopLine<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader><leader>k", ":HopLine<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader><leader>l", ":HopLine<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader><leader>w", ":HopWord<CR>", {noremap = true, silent = true})
 
 -- Hop Color Config
 vim.cmd [[
