@@ -60,6 +60,10 @@ alias glola="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgr
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
 
+# Run tmux on startup
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach || tmux new -s default -n zsh
+fi
 
 # Use 256colors inside TMUX
 if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
