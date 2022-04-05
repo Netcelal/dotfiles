@@ -36,8 +36,8 @@ map("n", "Y", "y$", {noremap = true})
 -- map("n", "<C-\\>", ":sp<bar>term<CR><C-w>J:resize10<CR>", opts)
 -- Mappings to move lines
 -- https://stackoverflow.com/questions/5379837/is-it-possible-to-mapping-alt-hjkl-in-insert-mode
-map("v", "‚àÜ", ":m '>+1<CR>gv=gv", opts)
-map("v", "Àö", ":m '<-2<CR>gv=gv", opts)
+map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts)
+map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts)
 
 map("n", "<C-e>", "3<C-e>", opts)
 map("n", "<C-y>", "3<C-y>", opts)
@@ -51,6 +51,10 @@ map("n", "<C-l>", "<C-w>l", opts)
 -- better indenting
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
+
+-- better search
+map("n", "n", "nzzzv", opts)
+map("n", "N", "Nzzzv", opts)
 
 -- Tabbing through buffers
 map("n", "<Tab>", ":bn<CR>", opts) -- Next buffer in list
