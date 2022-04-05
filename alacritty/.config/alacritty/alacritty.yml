@@ -1,4 +1,11 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
+# shell:
+#   program: /bin/zsh
+#   args:
+#     # Run tmux on startup
+#     - -l
+#     - -c
+#     - "tmux attach || tmux new -s default"
 
 window:
   padding:
@@ -16,7 +23,7 @@ window:
   #     - buttonless: Title bar, transparent background and no title bar buttons
   decorations: full
 
-  startup_mode: Maximized
+  startup_mode: Windowed
   # Window title
   title: Alacritty
   # Allow terminal applications to change Alacritty's window title.
@@ -79,6 +86,11 @@ font:
 
   # Point size
   size: 13
+
+  # line height and letter spacing
+  offset:
+    x: 0 # letter spacing
+    y: 0 # line spacing
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
@@ -186,29 +198,45 @@ key_bindings:
   #- { key: Down,                  mode: Search,     action: SearchHistoryNext     }
   #- { key: Return,                mode: Search|~Vi, action: SearchFocusNext       }
   #- { key: Return, mods: Shift,   mode: Search|~Vi, action: SearchFocusPrevious   }
-  # (Windows, Linux, and BSD only)
-  #- { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
-  #- { key: C,              mods: Control|Shift,                   action: Copy             }
-  #- { key: F,              mods: Control|Shift, mode: ~Search,    action: SearchForward    }
-  #- { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
-  #- { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
-  #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
-  #- { key: Key0,           mods: Control,                         action: ResetFontSize    }
-  #- { key: Equals,         mods: Control,                         action: IncreaseFontSize }
-  #- { key: Plus,           mods: Control,                         action: IncreaseFontSize }
-  #- { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
-  #- { key: Minus,          mods: Control,                         action: DecreaseFontSize }
-  #- { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
-  # (Windows only)
-  #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
   # (macOS only)
   #- { key: K,              mods: Command, mode: ~Vi|~Search, chars: "\x0c"                 }
   #- { key: K,              mods: Command, mode: ~Vi|~Search, action: ClearHistory          }
   #- { key: Key0,           mods: Command,                    action: ResetFontSize         }
-  - { key: Equals,         mods: Command,                    action: IncreaseFontSize      }
-  - { key: Plus,           mods: Command,                    action: IncreaseFontSize      }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Plus, mods: Command, action: IncreaseFontSize }
+  - {
+      key: Comma,
+      mods: Command,
+      command:
+        {
+          program: "sh",
+          args: [ "-c", "open ~/.config/alacritty/alacritty.yml" ]
+        }
+    }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: Space, mods: Alt, chars: " " }
+  - { key: Back, mods: Super, chars: "\x15" }
+  # delete word/line
+  - { key: Left, mods: Alt, chars: "\eb" }
+  # one word left
+  - { key: Right, mods: Alt, chars: "\ef" }
+  # one word right
+  - {
+      key: Left,
+      mods: Command,
+      chars: "\eOH",
+      mode: AppCursor
+    }
+  # Home
+  - {
+      key: Right,
+      mods: Command,
+      chars: "\eOF",
+      mode: AppCursor
+    }
+  # End
   #- { key: NumpadAdd,      mods: Command,                    action: IncreaseFontSize      }
-  - { key: Minus,          mods: Command,                    action: DecreaseFontSize      }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }
   #- { key: NumpadSubtract, mods: Command,                    action: DecreaseFontSize      }
   #- { key: V,              mods: Command,                    action: Paste                 }
   #- { key: C,              mods: Command,                    action: Copy                  }
