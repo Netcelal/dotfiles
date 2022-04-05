@@ -9,8 +9,16 @@ local opts = {noremap = true, silent = true}
 -- ===== Settings =====
 
 -- Swap files and backups
+-- set folder
+vim.cmd [[
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+]]
+-- set swapfiles and backups
 vim.o.backup = false
 vim.o.swapfile = false
+vim.o.undofile = true
 
 -- Use system clipboard on copy/paste
 vim.o.clipboard = "unnamedplus"
@@ -80,4 +88,4 @@ vim.g.material_style = "palenight" -- "darker" | "oceanic" | "palenight" | "deep
 vim.g.ayucolor = "mirage"
 vim.g.tokyonight_style = "storm" -- "light" | "day" | "storm"
 -- On Neovim color theme change, change alacritty color theme too: npx alacritty-themes
-vim.cmd [[colorscheme tokyonight]] -- onedark | tokyonight | ayu | material | dracula
+vim.cmd [[colorscheme catppuccin]] -- onedark | tokyonight | ayu | material | dracula | catppuccin

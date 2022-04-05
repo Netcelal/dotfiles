@@ -45,16 +45,16 @@ require("packer").startup(
 
     -- Themes
     -- use "joshdick/onedark.vim" -- Theme inspired by Atom
-    use "folke/tokyonight.nvim"
+    -- use "folke/tokyonight.nvim"
     -- use "ayu-theme/ayu-vim"
     -- use "marko-cerovac/material.nvim"
     -- use "dracula/vim" -- Theme Dracula
-    -- use(
-    --   {
-    --     "catppuccin/nvim",
-    --     as = "catppuccin"
-    --   }
-    -- )
+    use(
+      {
+        "catppuccin/nvim",
+        as = "catppuccin"
+      }
+    )
 
     -- Git integration for Neovim
     use {
