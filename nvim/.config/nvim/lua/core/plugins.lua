@@ -56,6 +56,14 @@ require("packer").startup(
       }
     )
 
+    -- File explorer for Neovim
+    use {
+      "kyazdani42/nvim-tree.lua",
+      requires = {
+        "kyazdani42/nvim-web-devicons" -- optional, for file icon
+      }
+    }
+
     -- Git integration for Neovim
     use {
       "TimUntersberger/neogit",

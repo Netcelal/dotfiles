@@ -1,4 +1,4 @@
-require("configs.netrw")
+require("configs.nvim-tree")
 require("configs.rest")
 require("configs.staline")
 require("configs.neogit")
