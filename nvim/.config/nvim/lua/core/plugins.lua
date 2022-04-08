@@ -73,6 +73,8 @@ require("packer").startup(
       }
     }
 
+    -- Git Blame inspired by VS Code
+    use "APZelos/blamer.nvim"
     -- "gc" to comment visual regions/lines
     use "numToStr/Comment.nvim"
 

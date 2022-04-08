@@ -1,10 +1,6 @@
 -- Set vim as local variable for lua diagnostics
 local vim = vim
 
--- Create local variable to shorten keymapping commands
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
-
 -- ToDo Comments config {{{
 require("todo-comments").setup {}
 -- }}}
@@ -38,4 +34,11 @@ vim.cmd [[
 
 -- Impatient config {{{
 require("impatient").enable_profile()
+-- }}}
+
+-- Blamer config {{{
+vim.cmd [[
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+]]
 -- }}}
