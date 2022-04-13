@@ -76,6 +76,7 @@ require("packer").startup(
 
     -- Git Blame inspired by VS Code
     use "APZelos/blamer.nvim"
+
     -- "gc" to comment visual regions/lines
     use "numToStr/Comment.nvim"
 
@@ -86,6 +87,8 @@ require("packer").startup(
       config = function()
       end
     }
+    -- Helper Plugin to comment in embeded files e.g Vue
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Surround everything
     use "tpope/vim-surround"
@@ -120,6 +123,8 @@ require("packer").startup(
 
     -- Additional textobjects for treesitter
     use "nvim-treesitter/nvim-treesitter-textobjects"
+    -- Rainbow Brakets
+    use "p00f/nvim-ts-rainbow"
 
     -- Snippets
     use "rafamadriz/friendly-snippets"
