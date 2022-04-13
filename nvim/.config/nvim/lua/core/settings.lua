@@ -87,5 +87,7 @@ vim.g.onedark_terminal_italics = 2
 vim.g.material_style = "palenight" -- "darker" | "oceanic" | "palenight" | "deep ocean"
 vim.g.ayucolor = "mirage"
 vim.g.tokyonight_style = "storm" -- "light" | "day" | "storm"
--- On Neovim color theme change, change alacritty color theme too: npx alacritty-themes
-vim.cmd [[colorscheme catppuccin]] -- onedark | tokyonight | ayu | material | dracula | catppuccin
+-- On Neovim color theme change:
+-- change alacritty color theme: npx alacritty-themes
+-- change kitty colorscheme: edit kitty.conf manually
+vim.cmd [[colorscheme kanagawa]] -- onedark | tokyonight | ayu | material | dracula | catppuccin | kanagawa

@@ -49,12 +49,13 @@ require("packer").startup(
     -- use "ayu-theme/ayu-vim"
     -- use "marko-cerovac/material.nvim"
     -- use "dracula/vim" -- Theme Dracula
-    use(
-      {
-        "catppuccin/nvim",
-        as = "catppuccin"
-      }
-    )
+    use "rebelot/kanagawa.nvim" -- Kanagawa Theme
+    -- use(
+    --   {
+    --     "catppuccin/nvim",
+    --     as = "catppuccin"
+    --   }
+    -- )
 
     -- File explorer for Neovim
     use {
