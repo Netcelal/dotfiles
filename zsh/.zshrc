@@ -65,6 +65,11 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach || tmux new -s default -n zsh
 fi
 
+# Configure fzf
+if [[ -x "$(command -v fzf)" ]] && [[ -x "$(command -v bat)" ]]; then
+  alias fp="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+fi
+
 # Use 256colors inside TMUX
 if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
 
