@@ -5,13 +5,15 @@ require("staline").setup {
     left = {
       "▊",
       " ",
-      {"Evil", " "},
-      " ", -- The mode and evil sign
+      {"VimIcon", " "},
+      " ", -- The mode and Vim icon
       {"StalineGit", "branch"},
       " ",
       -- Branch Name in different highlight
       {"StalineFile", "file_name"},
       " ", -- Filename in different highlight
+      "%L LOC ",
+      "/",
       "file_size",
       " " -- Filesize
     },
@@ -20,8 +22,8 @@ require("staline").setup {
     right = {
       {"StalineEnc", vim.bo.fileencoding:upper()},
       "  ", -- Example for custom section
-      {"StalineEnc", "cool_symbol"},
-      " ", -- the cool_symbol for your OS
+      -- {"StalineEnc", "cool_symbol"},
+      -- " ", -- the cool_symbol for your OS
       "line_column",
       "▊"
     }
@@ -43,7 +45,7 @@ require("staline").setup {
   --   v = "#fc802d" -- etc mode
   -- }
 }
-vim.cmd [[hi Evil        guifg=#f36365 guibg=#202328]] -- Higlight for Evil symbol
+vim.cmd [[hi VimIcon        guifg=#f36365 guibg=#202328]] -- Higlight for Vim icon
 vim.cmd [[hi StalineEnc  guifg=#7d9955 guibg=#202328]] -- Encoding Highlight
 vim.cmd [[hi StalineGit  guifg=#8583b3 guibg=#202328]] -- Branch Name Highlight
 vim.cmd [[hi StalineFile guifg=#c37cda guibg=#202328]] -- File name Highlight-- }

@@ -32,6 +32,10 @@ vim.o.smartindent = true
 
 -- Completion
 vim.o.wildmode = "longest:list,full"
+
+-- prefer vertical diff split for merge conflicts
+vim.cmd [[set diffopt+=vertical]]
+
 --Incremental live completion (note: this is now a default on master)
 vim.o.inccommand = "nosplit"
 
@@ -79,7 +83,7 @@ vim.o.showmode = false
 vim.wo.scrolloff = 5
 
 -- Always show statusbar
-vim.o.laststatus = 2
+vim.o.laststatus = 3
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
