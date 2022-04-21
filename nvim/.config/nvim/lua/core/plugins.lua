@@ -1,26 +1,14 @@
 -- Set vim as local variable for lua diagnostics
 local vim = vim
 
--- Create local variable to shorten keymapping commands
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
-
-vim.cmd [[autocmd FileType lua setlocal foldmethod=marker]]
-
 -- Plugins
 -- Install packer
-local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+local fn = vim.fn
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+  Packer_bootstrap =
+    fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
 end
-
-vim.cmd [[
-  augroup Packer
-    autocmd!
-    autocmd BufWritePost init.lua PackerCompile
-  augroup end
-]]
 
 local use = require("packer").use
 require("packer").startup(
@@ -39,6 +27,9 @@ require("packer").startup(
 
     -- Smooth scroll for Neovim
     use {"karb94/neoscroll.nvim"}
+
+    -- Distruction free mode
+    use "Pocco81/TrueZen.nvim"
 
     -- Neovim + TMux integration
     use "christoomey/vim-tmux-navigator"
@@ -66,9 +57,9 @@ require("packer").startup(
     }
 
     -- Git integration for Neovim
-
-    -- Git Blame inspired by VS Code
-    use "APZelos/blamer.nvim"
+    use "voldikss/vim-floaterm" -- used to display lazygit in Neovim
+    use "lewis6991/gitsigns.nvim"
+    use "APZelos/blamer.nvim" -- Git Blame inspired by VS Code
 
     -- "gc" to comment visual regions/lines
     use "numToStr/Comment.nvim"
@@ -155,5 +146,8 @@ require("packer").startup(
     --     require("trouble").setup {}
     --   end
     -- }
+    if Packer_bootstrap then
+      require("packer").sync()
+    end
   end
 )

@@ -63,3 +63,5 @@ map("n", "<leader><Tab>", ":b#<CR>", opts) -- Previous buffer you were in
 
 -- Deletes current buffer
 map("n", "<leader>bd", ":b#<bar>bd#<CR>", opts)
+
+map("n", "<C-g>", ":FloatermNew lazygit<CR>", opts)

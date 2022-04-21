@@ -1,3 +1,4 @@
+-- vim:setlocal foldmethod=marker
 -- Set vim as local variable for lua diagnostics
 local vim = vim
 
@@ -41,4 +42,13 @@ vim.cmd [[
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
 ]]
+-- }}}
+
+-- TrueZen config {{{
+require("true-zen").setup()
+vim.api.nvim_set_keymap("n", "<F12>", [[<Cmd>TZAtaraxis<CR>]], {noremap = true, silent = true})
+-- }}}
+
+-- Gitsigns config {{{
+require("gitsigns").setup()
 -- }}}
