@@ -34,12 +34,13 @@ echo "Installing bat"
 brew install bat
 
 # install better ls
-echo "Installing exa"
-brew install exa
+echo "Installing lsd"
+brew install lsd
 
 # install lazygit
 echo "Installing lazygit"
 brew install jesseduffield/lazygit/lazygit
+
 
 # install starship
 echo "Installing starship"
@@ -48,6 +49,10 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 # install alacritty
 echo "Installing alacritty"
 brew install --cask alacritty
+
+# install kitty
+echo "Installing kitty"
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 # install tmux
 echo "Installing tmux"
@@ -62,5 +67,6 @@ echo "Stowing dotfiles to " $HOME
 stow -vSt ~ zsh
 stow -vSt ~ starship
 stow -vSt ~ alacritty
+stow -vSt ~ kitty
 stow -vSt ~ tmux
 stow -vSt ~ nvim
