@@ -1,7 +1,6 @@
 require("configs.nvim-tree")
 require("configs.rest")
 require("configs.staline")
-require("configs.neogit")
 require("configs.telescope")
 require("configs.treesitter")
 require("configs.lsp")

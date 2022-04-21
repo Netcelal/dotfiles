@@ -66,13 +66,6 @@ require("packer").startup(
     }
 
     -- Git integration for Neovim
-    use {
-      "TimUntersberger/neogit",
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "sindrets/diffview.nvim"
-      }
-    }
 
     -- Git Blame inspired by VS Code
     use "APZelos/blamer.nvim"
