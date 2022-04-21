@@ -1,3 +1,4 @@
+-- vim:setlocal foldmethod=marker
 -- Set vim as local variable for lua diagnostics
 local vim = vim
 
@@ -183,10 +184,10 @@ require("lspconfig").tsserver.setup(
 )
 
 -- Deno
-vim.g.markdown_fenced_languages = {
-  "ts=typescript"
-}
-require "lspconfig".denols.setup {}
+-- vim.g.markdown_fenced_languages = {
+--   "ts=typescript"
+-- }
+-- require "lspconfig".denols.setup {}
 
 -- HTML
 require("lspconfig").html.setup(
@@ -195,6 +196,13 @@ require("lspconfig").html.setup(
     on_attach = function(client)
       client.resolved_capabilities.document_formatting = false
     end
+  }
+)
+-- Emmet
+require("lspconfig").emmet_ls.setup(
+  {
+    capabilities = capabilities,
+    filetypes = {"html", "css", "vue"}
   }
 )
 
