@@ -37,18 +37,6 @@ then
       # tmux split-pane -v -p 30
       tmux split-window -v
       tmux split-pane -h
-
-
-      # Setup a Git window
-      tmux new-window -t $SESSION:3 -n 'LazyGit';
-      tmux send-keys -t 'LazyGit' "lazygit" C-m;
-
-      # Setup a Scratchpad window
-      tmux new-window -t $SESSION:4 -n 'Scratchpad';
-      tmux send-keys -t 'Scratchpad' "nvim ~/Projects/scratch-pad/scratch1.txt" C-m;
-
-      # Setup a ssh window
-      tmux new-window -t $SESSION:5 -n 'SSH';
   fi
 
   # Attach Session, on the Code window
