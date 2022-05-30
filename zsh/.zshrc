@@ -61,7 +61,7 @@ alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
 
 # Run tmux on startup
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
     tmux attach || tmux new -s default -n zsh
 fi
 
