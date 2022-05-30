@@ -62,6 +62,9 @@ brew install tmux
 echo "Installing neovim"
 brew install --HEAD neovim
 
+echo "Installing neovim lsp server npm modules"
+npm i -g yaml-language-server @volar/vue-language-server typescript typescript-language-server graphql-language-service-cli emmet-ls dockerfile-language-server-nodejs yaml-language-server vscode-langservers-extracted bash-language-server @angular/language-server
+
 # stow all dotfiles to $HOME (~)
 echo "Stowing dotfiles to " $HOME
 stow -vSt ~ zsh
