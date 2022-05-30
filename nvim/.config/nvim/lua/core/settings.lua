@@ -1,11 +1,6 @@
 -- Set vim as local variable for lua diagnostics
 local vim = vim
 
--- Settings
--- Create local variable to shorten keymapping commands
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
-
 -- ===== Settings =====
 
 -- Swap files and backups
@@ -83,7 +78,11 @@ vim.o.showmode = false
 vim.wo.scrolloff = 5
 
 -- Always show statusbar
-vim.o.laststatus = 3
+vim.cmd [[
+set winbar =%f
+]]
+vim.o.laststatus = 3 -- Show only one status bar for all panes
+-- vim.o.laststatus = 2
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
